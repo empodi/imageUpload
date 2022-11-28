@@ -15,7 +15,7 @@ const upload = multer({
     s3: s3,
     bucket: "bucket-images-for-gongu",
     key: (req, file, cb) => {
-      cb(null, `${file.originalname}`);
+      cb(null, `${Date.now()}_${file.originalname}`);
     },
   }),
 });
